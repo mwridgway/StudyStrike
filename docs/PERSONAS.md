@@ -29,21 +29,19 @@ This document outlines the primary user personas that StudyStrike is designed to
 - No clear connection between school work and gaming rewards
 
 #### How StudyStrike Helps
-- **XP System**: Earn points for study sessions that can be exchanged for gaming rewards
+- **StudyCoins (SC)**: Earn in-game currency for study sessions that can be exchanged for gaming rewards
 - **Familiar Gaming Interface**: Clean, modern UI that feels like a game
-- **Study Sessions**: Focused "missions" with clear objectives and rewards
+- **Quests**: Focused challenges with clear objectives and rewards
 - **Team Mode**: Study with friends in group sessions
 - **Progress Levels**: Work through different achievement levels
 - **Achievement System**: Unlock badges and rewards for academic milestones
 
 #### Key Features They'll Use
-- **XP System**: Earn study points for gaming rewards (Steam wallet, peripherals, game time)
+- **StudyCoins (SC)**: Earn in-game currency for gaming rewards (Steam wallet, peripherals, game time)
 - **Progress Levels**: Work through different achievement tiers
-- **Study Missions**: Weekly/monthly challenges with rewards
-- **Group Study Sessions**: Study with friends in team mode
+- **Quests**: Daily/weekly/monthly challenges with rewards
 - **Achievement System**: Unlock badges and rewards for academic goals
 - **Reward Wishlist**: Request specific gaming rewards from parents
-- **Study Schedule**: Flexible scheduling around gaming commitments
 
 ---
 
@@ -62,9 +60,9 @@ This document outlines the primary user personas that StudyStrike is designed to
 #### How StudyStrike Helps
 - **Parent Dashboard**: 
     - Monitor progress without micromanaging
-    - Set up rewards (game time, steam wallet funds, new peripherals) in exchange for in-game XP
+    - Set up rewards (game time, steam wallet funds, new peripherals) in exchange for StudyCoins (SC)
     - Set up rewards for performance per subject, per term
-    - Set up daily, weekly, monthly tasks
+    - Set up daily, weekly, monthly quests
 - **Progress Reports**: Regular updates on study habits
 - **Study Tips**: Guidance on how to support learning
 - **Family Goals**: Collaborative learning objectives
@@ -86,13 +84,12 @@ This document outlines the primary user personas that StudyStrike is designed to
 - **Mobile-First**: Critical for studying between gaming sessions
 
 ### Feature Development
-- **Gaming Mechanics**: Familiar game elements (levels, points, missions, teams)
+- **Gaming Mechanics**: Familiar game elements (levels, StudyCoins, quests)
 - **Reward System**: Tangible gaming rewards (Steam wallet, peripherals, game time)
-- **Social Features**: Group study sessions and leaderboards
 - **Analytics**: Performance tracking with engaging stats
 
 ### Content Strategy
-- **Bite-sized**: Quick study sessions between gaming sessions
+- **Bite-sized**: Quick quest completion between gaming sessions
 - **Gaming Language**: Frame academic content in engaging, game-like terms
 - **Practical**: Direct connection to gaming rewards and achievements
 - **Visual**: Engaging graphics and animations

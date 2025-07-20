@@ -4,33 +4,31 @@ A modern, interactive study application designed to help students and learners m
 
 ## 🎯 About
 
-StudyStrike is an innovative study platform that combines proven learning techniques with engaging gamification elements to make studying more effective and enjoyable. Whether you're preparing for exams, learning new skills, or just want to improve your knowledge retention, StudyStrike provides the tools and motivation you need to succeed.
+StudyStrike is an innovative study platform designed specifically for students who love gaming. By combining proven learning techniques with familiar gaming mechanics, StudyStrike makes studying engaging and rewarding. Earn points for study sessions, unlock achievements, and exchange your progress for gaming rewards like Steam wallet funds, peripherals, and game time. Whether you're a competitive gamer balancing school and esports, or just want to make homework more enjoyable, StudyStrike provides the motivation and tools you need to succeed academically.
 
 ## ✨ Features
 
-### 🎮 Gamified Learning
-- **Study Streaks**: Build momentum with daily study sessions
-- **Achievement System**: Unlock badges and rewards for consistent progress
-- **Leaderboards**: Compete with friends or challenge yourself
-- **Progress Tracking**: Visualize your learning journey with detailed analytics
+### 🎮 Gaming-Inspired Learning
+- **StudyCoins (SC)**: Earn in-game currency for gaming rewards (Steam wallet, peripherals, game time)
+- **Progress Levels**: Work through different achievement tiers
+- **Quests**: Daily/weekly/monthly challenges with rewards
+- **Achievement System**: Unlock badges and rewards for academic goals
+- **Group Study Sessions**: Study with friends in team mode
 
-### 📖 Study Tools
-- **Flashcard System**: Create and review custom flashcards
-- **Spaced Repetition**: Optimize review schedules for maximum retention
-- **Study Sessions**: Timed study blocks with focus modes
-- **Note Taking**: Integrated note-taking with smart organization
+
 
 ### 🎯 Smart Features
-- **Adaptive Learning**: AI-powered recommendations based on your performance
-- **Study Reminders**: Customizable notifications to maintain consistency
 - **Progress Analytics**: Detailed insights into your learning patterns
-- **Multi-Subject Support**: Organize studies across different topics
+- **Subject Management**: Organize studies across different academic subjects
+- **Parent Dashboard**: Monitor progress and set up reward systems
+- **Quest System**: Configurable daily/weekly/monthly learning objectives
 
 ## 🚀 Getting Started
 
 ### Prerequisites
 - Node.js (v18 or higher)
-- npm or yarn package manager
+- Java 17 or higher
+- Maven 3.6 or higher
 - Modern web browser
 
 ### Installation
@@ -41,27 +39,22 @@ StudyStrike is an innovative study platform that combines proven learning techni
    cd StudyStrike
    ```
 
-2. **Install dependencies**
+2. **Start the backend server**
    ```bash
+   cd backend
+   mvn spring-boot:run
+   ```
+   The backend will start on `http://localhost:8080`
+
+3. **Start the frontend development server**
+   ```bash
+   cd frontend
    npm install
-   # or
-   yarn install
+   npm start
    ```
+   The frontend will start on `http://localhost:3000`
 
-3. **Set up environment variables**
-   ```bash
-   cp .env.example .env
-   # Edit .env with your configuration
-   ```
-
-4. **Start the development server**
-   ```bash
-   npm run dev
-   # or
-   yarn dev
-   ```
-
-5. **Open your browser**
+4. **Open your browser**
    Navigate to `http://localhost:3000` to start using StudyStrike!
 
 ## 🛠️ Tech Stack
@@ -69,26 +62,35 @@ StudyStrike is an innovative study platform that combines proven learning techni
 - **Frontend**: React.js with TypeScript
 - **Styling**: Tailwind CSS
 - **State Management**: Zustand / React Context + useReducer
-- **Backend**: Node.js with Express
-- **Database**: MongoDB
+- **Backend**: Spring Boot with Java
+- **Database**: H2 (local development)
 - **Authentication**: JWT
-- **Deployment**: Vercel/Netlify
+- **Build Tool**: Maven
 
 ## 📁 Project Structure
 
 ```
 StudyStrike/
-├── src/
-│   ├── components/     # Reusable UI components
-│   ├── pages/         # Page components
-│   ├── hooks/         # Custom React hooks
-│   ├── services/      # API and external services
-│   ├── store/         # State management (Zustand stores)
-│   ├── types/         # TypeScript type definitions
-│   └── utils/         # Utility functions
-├── public/            # Static assets
+├── frontend/          # React TypeScript application
+│   ├── src/
+│   │   ├── components/     # Reusable UI components
+│   │   ├── pages/         # Page components
+│   │   ├── hooks/         # Custom React hooks
+│   │   ├── services/      # API and external services
+│   │   ├── store/         # State management (Zustand stores)
+│   │   ├── types/         # TypeScript type definitions
+│   │   └── utils/         # Utility functions
+│   ├── public/            # Static assets
+│   └── package.json       # Frontend dependencies
+├── backend/           # Spring Boot Java application
+│   ├── src/
+│   │   ├── main/
+│   │   │   ├── java/      # Java source code
+│   │   │   └── resources/ # Configuration files
+│   │   └── test/          # Java tests
+│   └── pom.xml            # Maven dependencies
 ├── docs/              # Documentation
-└── tests/             # Test files
+└── README.md          # Project overview
 ```
 
 ## 🤝 Contributing
@@ -126,12 +128,12 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 ## 🗺️ Roadmap
 
 - [ ] Mobile app development
-- [ ] Advanced analytics dashboard
-- [ ] Social learning features
-- [ ] AI-powered study recommendations
-- [ ] Integration with popular learning platforms
+- [ ] Advanced quest analytics dashboard
+- [ ] Social learning features and leaderboards
+- [ ] Integration with school learning management systems
 - [ ] Offline study mode
 - [ ] Multi-language support
+- [ ] Advanced reward marketplace
 
 ---
 
