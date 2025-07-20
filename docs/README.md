@@ -24,6 +24,9 @@ Detailed guide to subject configuration, including parent admin interface, quest
 #### [📱 Quest UI Specification](QUEST_UI_SPECIFICATION.md)
 Comprehensive UI specification for the student quest interface, including component design, user experience flows, and technical implementation.
 
+#### [🔐 Authentication System](AUTHENTICATION.md)
+Complete JWT-based authentication system with email/password login, user account management, and parent-child linking.
+
 ## 🎯 System Architecture
 
 ### **Core Components**
@@ -74,8 +77,8 @@ Comprehensive UI specification for the student quest interface, including compon
 - **Styling**: Tailwind CSS
 - **State Management**: Zustand / React Context + useReducer
 - **Backend**: Spring Boot with Java
-- **Database**: H2 (local development)
-- **Authentication**: JWT
+- **Database**: PostgreSQL
+- **Authentication**: JWT-based authentication (email/password)
 - **Build Tool**: Maven
 
 ## 📊 Implementation Strategy
@@ -139,6 +142,7 @@ Comprehensive UI specification for the student quest interface, including compon
 - **[Quest System](QUEST_SYSTEM.md)**
 - **[Subject Management](SUBJECT_MANAGEMENT.md)**
 - **[Quest UI Specification](QUEST_UI_SPECIFICATION.md)**
+- **[Authentication System](AUTHENTICATION.md)**
 
 ---
 

@@ -1,0 +1,106 @@
+{
+  "info": {
+    "name": "StudyStrike API",
+    "_postman_id": "studysrike-collection-001",
+    "description": "Postman collection for testing StudyStrike backend API endpoints.",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Health Check",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8080/api/health",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "8080",
+          "path": ["api", "health"]
+        }
+      }
+    },
+    {
+      "name": "Register User",
+      "request": {
+        "method": "POST",
+        "header": [
+          { "key": "Content-Type", "value": "application/json" }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"email\": \"parent@example.com\",\n  \"password\": \"yourpassword\",\n  \"role\": \"PARENT\"\n}"
+        },
+        "url": {
+          "raw": "http://localhost:8080/api/auth/register",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "8080",
+          "path": ["api", "auth", "register"]
+        }
+      }
+    },
+    {
+      "name": "Login User",
+      "request": {
+        "method": "POST",
+        "header": [
+          { "key": "Content-Type", "value": "application/json" }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"email\": \"parent@example.com\",\n  \"password\": \"yourpassword\"\n}"
+        },
+        "url": {
+          "raw": "http://localhost:8080/api/auth/login",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "8080",
+          "path": ["api", "auth", "login"]
+        }
+      }
+    },
+    {
+      "name": "Create Family Group",
+      "request": {
+        "method": "POST",
+        "header": [
+          { "key": "Content-Type", "value": "application/json" },
+          { "key": "Authorization", "value": "Bearer <your-jwt-token>" }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"familyName\": \"The Smiths\"\n}"
+        },
+        "url": {
+          "raw": "http://localhost:8080/api/family/create",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "8080",
+          "path": ["api", "family", "create"]
+        }
+      }
+    },
+    {
+      "name": "Invite Child",
+      "request": {
+        "method": "POST",
+        "header": [
+          { "key": "Content-Type", "value": "application/json" },
+          { "key": "Authorization", "value": "Bearer <your-jwt-token>" }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"email\": \"child@example.com\"\n}"
+        },
+        "url": {
+          "raw": "http://localhost:8080/api/family/invite",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "8080",
+          "path": ["api", "family", "invite"]
+        }
+      }
+    }
+  ]
+} 

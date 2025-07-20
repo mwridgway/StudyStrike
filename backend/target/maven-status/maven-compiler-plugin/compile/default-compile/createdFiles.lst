@@ -1,0 +1,12 @@
+com\studystrike\entity\FamilyGroup.class
+com\studystrike\controller\AuthController$LoginRequest.class
+com\studystrike\controller\AuthController.class
+com\studystrike\entity\User$UserRole.class
+com\studystrike\entity\User.class
+com\studystrike\entity\FamilyInvitation$InvitationStatus.class
+com\studystrike\StudyStrikeApplication.class
+com\studystrike\controller\HealthController.class
+com\studystrike\entity\FamilyInvitation.class
+com\studystrike\controller\AuthController$RegisterRequest.class
+com\studystrike\repository\UserRepository.class
+com\studystrike\config\SecurityConfig.class

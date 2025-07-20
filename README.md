@@ -1,142 +1,246 @@
-# StudyStrike 📚⚡
+# StudyStrike 🎮📚
 
-A modern, interactive study application designed to help students and learners maximize their productivity and retention through gamified learning experiences.
+A gamified learning platform that motivates students to complete academic tasks by earning StudyCoins (SC) that can be spent on real-world gaming rewards.
 
-## 🎯 About
+## 🏗️ Project Structure
 
-StudyStrike is an innovative study platform designed specifically for students who love gaming. By combining proven learning techniques with familiar gaming mechanics, StudyStrike makes studying engaging and rewarding. Earn points for study sessions, unlock achievements, and exchange your progress for gaming rewards like Steam wallet funds, peripherals, and game time. Whether you're a competitive gamer balancing school and esports, or just want to make homework more enjoyable, StudyStrike provides the motivation and tools you need to succeed academically.
+```
+StudyStrike/
+├── frontend/                 # React.js + TypeScript frontend
+│   ├── src/
+│   │   ├── components/       # Reusable UI components
+│   │   ├── pages/           # Page components
+│   │   ├── services/        # API service layer
+│   │   ├── store/           # Zustand state management
+│   │   ├── types/           # TypeScript type definitions
+│   │   └── utils/           # Utility functions
+│   ├── package.json         # Frontend dependencies
+│   └── tsconfig.json        # TypeScript configuration
+├── backend/                  # Spring Boot + Java backend
+│   ├── src/main/java/com/studystrike/
+│   │   ├── controller/      # REST API controllers
+│   │   ├── service/         # Business logic services
+│   │   ├── repository/      # Data access layer
+│   │   ├── entity/          # JPA entity classes
+│   │   ├── config/          # Spring configuration
+│   │   └── dto/             # Data transfer objects
+│   ├── pom.xml              # Maven dependencies
+│   └── application.yml      # Spring Boot configuration
+└── docs/                    # Project documentation
+```
 
-## ✨ Features
-
-### 🎮 Gaming-Inspired Learning
-- **StudyCoins (SC)**: Earn in-game currency for gaming rewards (Steam wallet, peripherals, game time)
-- **Progress Levels**: Work through different achievement tiers
-- **Quests**: Daily/weekly/monthly challenges with rewards
-- **Achievement System**: Unlock badges and rewards for academic goals
-- **Group Study Sessions**: Study with friends in team mode
-
-
-
-### 🎯 Smart Features
-- **Progress Analytics**: Detailed insights into your learning patterns
-- **Subject Management**: Organize studies across different academic subjects
-- **Parent Dashboard**: Monitor progress and set up reward systems
-- **Quest System**: Configurable daily/weekly/monthly learning objectives
-
-## 🚀 Getting Started
+## 🚀 Quick Start
 
 ### Prerequisites
-- Node.js (v18 or higher)
-- Java 17 or higher
-- Maven 3.6 or higher
-- Modern web browser
 
-### Installation
+#### Windows Installation Guide
 
-1. **Clone the repository**
-   ```bash
-   git clone https://github.com/yourusername/StudyStrike.git
-   cd StudyStrike
+**1. Node.js (v16+) and npm**
+- Download from: https://nodejs.org/
+- Choose the LTS version (recommended)
+- Run the installer and follow the setup wizard
+- Verify installation:
+  ```powershell
+  node --version
+  npm --version
+  ```
+
+**2. Java (v17+) and Maven**
+- Download OpenJDK 17 from: https://adoptium.net/
+- Run the installer and follow the setup wizard
+- Download Maven from: https://maven.apache.org/download.cgi
+- Extract to `C:\Program Files\Apache\maven` or your preferred location
+- Add Maven to PATH environment variable:
+  ```powershell
+  # Add to user PATH (replace with your Maven path)
+  [Environment]::SetEnvironmentVariable("PATH", $env:PATH + ";C:\Program Files\Apache\maven\bin", "User")
+  ```
+- Verify installation:
+  ```powershell
+  java --version
+  mvn --version
+  ```
+
+**3. PostgreSQL (v12+)**
+- Download from: https://www.postgresql.org/download/windows/
+- Run the installer and follow the setup wizard
+- Remember the password you set for the postgres user
+- Verify installation:
+  ```powershell
+  psql --version
+  ```
+
+**Alternative: Using Chocolatey Package Manager**
+If you have Chocolatey installed:
+```powershell
+# Install Chocolatey first (run as Administrator)
+Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; iex ((New-Object System.Net.WebClient).DownloadString('https://community.chocolatey.org/install.ps1'))
+
+# Install prerequisites
+choco install nodejs
+choco install openjdk17
+choco install maven
+choco install postgresql
+```
+
+**Alternative: Using Windows Subsystem for Linux (WSL)**
+If you prefer using WSL:
+```bash
+# Install WSL2 first, then:
+sudo apt update
+sudo apt install nodejs npm
+sudo apt install openjdk-17-jdk
+sudo apt install maven
+sudo apt install postgresql postgresql-contrib
+```
+
+### Frontend Setup
+
+```bash
+cd frontend
+npm install
+npm start
+```
+
+The frontend will run on `http://localhost:3000`
+
+### Backend Setup
+
+1. **Database Setup**
+   ```sql
+   CREATE DATABASE studystrike;
    ```
 
-2. **Start the backend server**
+2. **Environment Variables**
+   Create a `.env` file in the backend directory:
+   ```env
+   MAIL_USERNAME=your-email@gmail.com
+   MAIL_PASSWORD=your-app-password
+   JWT_SECRET=your-jwt-secret
+   JWT_EXPIRATION_MS=86400000
+   ```
+
+3. **Run Backend**
    ```bash
    cd backend
    mvn spring-boot:run
    ```
-   The backend will start on `http://localhost:8080`
 
-3. **Start the frontend development server**
-   ```bash
-   cd frontend
-   npm install
-   npm start
-   ```
-   The frontend will start on `http://localhost:3000`
+The backend will run on `http://localhost:8080`
 
-4. **Open your browser**
-   Navigate to `http://localhost:3000` to start using StudyStrike!
+### Troubleshooting Common Windows Issues
 
-## 🛠️ Tech Stack
+**Node.js Issues:**
+- If `node` or `npm` commands are not recognized, restart your terminal/PowerShell
+- If you get permission errors, run PowerShell as Administrator
+- If npm install fails, try: `npm cache clean --force`
 
-- **Frontend**: React.js with TypeScript
-- **Styling**: Tailwind CSS
-- **State Management**: Zustand / React Context + useReducer
-- **Backend**: Spring Boot with Java
-- **Database**: H2 (local development)
-- **Authentication**: JWT
-- **Build Tool**: Maven
+**Java/Maven Issues:**
+- If `java` command not found, check JAVA_HOME environment variable
+- If `mvn` command not found, verify Maven is in your PATH
+- If Maven download fails, check your firewall/proxy settings
 
-## 📁 Project Structure
+**PostgreSQL Issues:**
+- If `psql` command not found, add PostgreSQL bin directory to PATH
+- Default PostgreSQL bin path: `C:\Program Files\PostgreSQL\[version]\bin`
+- If connection fails, check if PostgreSQL service is running:
+  ```powershell
+  Get-Service postgresql*
+  Start-Service postgresql*
+  ```
 
-```
-StudyStrike/
-├── frontend/          # React TypeScript application
-│   ├── src/
-│   │   ├── components/     # Reusable UI components
-│   │   ├── pages/         # Page components
-│   │   ├── hooks/         # Custom React hooks
-│   │   ├── services/      # API and external services
-│   │   ├── store/         # State management (Zustand stores)
-│   │   ├── types/         # TypeScript type definitions
-│   │   └── utils/         # Utility functions
-│   ├── public/            # Static assets
-│   └── package.json       # Frontend dependencies
-├── backend/           # Spring Boot Java application
-│   ├── src/
-│   │   ├── main/
-│   │   │   ├── java/      # Java source code
-│   │   │   └── resources/ # Configuration files
-│   │   └── test/          # Java tests
-│   └── pom.xml            # Maven dependencies
-├── docs/              # Documentation
-└── README.md          # Project overview
-```
+**Port Conflicts:**
+- If port 3000 is in use: `netstat -ano | findstr :3000`
+- If port 8080 is in use: `netstat -ano | findstr :8080`
+- Kill process: `taskkill /PID [process_id] /F`
+
+**Firewall Issues:**
+- Allow Node.js and Java through Windows Firewall
+- Check antivirus software isn't blocking the applications
+
+## 🎯 Key Features
+
+### 🔐 Authentication & User Management
+- **JWT Authentication**: Secure login with email and password
+- **User Registration**: Parent and Student account types
+- **Family Group System**: Secure parent-child linking via email invitations
+- **Email Verification**: Verified email addresses for invitation system
+
+### 👨‍👩‍👧‍👦 Family Management
+- **Family Group Creation**: Parents create family groups with unique codes
+- **Child Invitations**: Secure email-based invitation system
+- **Invitation Management**: Students can accept/decline invitations
+- **Access Control**: Only invited users can join family groups
+
+### 🎮 Gamification System
+- **StudyCoins (SC)**: In-game currency earned through quest completion
+- **Quest System**: Configurable tasks with clear completion criteria
+- **Subject Management**: Parents configure academic subjects
+- **Reward System**: Real-world gaming rewards for StudyCoins
+
+### 📊 Quest Management
+- **Quest Frequencies**: Daily, Weekly, Monthly, Term, Annual
+- **Subject Association**: Each quest linked to specific subjects
+- **Progress Tracking**: Real-time quest completion status
+- **Parent Configuration**: Full control over quest creation and rewards
+
+## 🛠️ Technology Stack
+
+### Frontend
+- **React.js** with TypeScript
+- **Tailwind CSS** for styling
+- **Zustand** for state management
+- **React Router** for navigation
+- **Axios** for API communication
+
+### Backend
+- **Spring Boot** 3.1.0 with Java 17
+- **Spring Security** with OAuth 2.0
+- **Spring Data JPA** for data persistence
+- **PostgreSQL** database
+- **Maven** build tool
+
+### Authentication
+- **JWT** tokens for session management
+- **Email verification** system
+- **Secure invitation** tokens
+
+## 📁 Documentation
+
+- [Personas](./docs/PERSONAS.md) - User personas and requirements
+- [Currency System](./docs/CURRENCY_SYSTEM.md) - StudyCoins implementation
+- [Quest System](./docs/QUEST_SYSTEM.md) - Quest management features
+- [Subject Management](./docs/SUBJECT_MANAGEMENT.md) - Academic subject configuration
+- [Authentication](./docs/AUTHENTICATION.md) - OAuth and security implementation
+
+## 🔒 Security & Privacy
+
+- **GDPR Compliance**: Data protection and user rights
+- **COPPA Compliance**: Child privacy protection
+- **Secure OAuth**: Industry-standard authentication
+- **Email Verification**: Verified user accounts
+- **Invitation Security**: Secure token-based invitations
+
+## 🚧 Development Status
+
+- ✅ Project structure setup
+- ✅ Frontend React + TypeScript foundation
+- ✅ Backend Spring Boot + JPA entities
+- ✅ Authentication system design
+- ✅ Family group management system
+- 🔄 OAuth provider configuration
+- 🔄 Database schema implementation
+- 🔄 API endpoint development
+- 🔄 Frontend-backend integration
 
 ## 🤝 Contributing
 
-We welcome contributions from the community! Here's how you can help:
+1. Fork the repository
+2. Create a feature branch
+3. Make your changes
+4. Add tests if applicable
+5. Submit a pull request
 
-1. **Fork the repository**
-2. **Create a feature branch** (`git checkout -b feature/amazing-feature`)
-3. **Commit your changes** (`git commit -m 'Add some amazing feature'`)
-4. **Push to the branch** (`git push origin feature/amazing-feature`)
-5. **Open a Pull Request**
+## 📄 License
 
-### Development Guidelines
-- Follow the existing code style and conventions
-- Write tests for new features
-- Update documentation as needed
-- Ensure all tests pass before submitting
-
-## 📝 License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
-## 🙏 Acknowledgments
-
-- Inspired by effective learning techniques and gamification principles
-- Built with modern web technologies for optimal performance
-- Community-driven development and feedback
-
-## 📞 Support
-
-- **Issues**: [GitHub Issues](https://github.com/yourusername/StudyStrike/issues)
-- **Discussions**: [GitHub Discussions](https://github.com/yourusername/StudyStrike/discussions)
-- **Email**: support@studystrike.com
-
-## 🗺️ Roadmap
-
-- [ ] Mobile app development
-- [ ] Advanced quest analytics dashboard
-- [ ] Social learning features and leaderboards
-- [ ] Integration with school learning management systems
-- [ ] Offline study mode
-- [ ] Multi-language support
-- [ ] Advanced reward marketplace
-
----
-
-**Made with ❤️ for learners everywhere**
-
-*StudyStrike - Strike through your study goals!* 
+This project is licensed under the MIT License - see the LICENSE file for details. 
